@@ -53,10 +53,10 @@ Saving data to the log:
 ```php
 $cl = $modules->get('CustomLogs');
 $data = [
-    $_SERVER['REQUEST_URI'],
-    $_SERVER['REMOTE_ADDR'],
-    $_SERVER['HTTP_USER_AGENT'],
-    $_SERVER['HTTP_REFERER'],
+    $_SERVER['REQUEST_URI'] ?? '',
+    $_SERVER['REMOTE_ADDR'] ?? '',
+    $_SERVER['HTTP_USER_AGENT'] ?? '',
+    $_SERVER['HTTP_REFERER'] ?? '',
 ];
 $cl->save('visits', $data);
 ```

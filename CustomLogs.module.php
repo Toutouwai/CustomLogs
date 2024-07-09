@@ -411,6 +411,7 @@ class CustomLogs extends WireData implements Module, ConfigurableModule {
 		$log = $this->wire()->log;
 		$filelog = $log->getFileLog($name);
 		foreach($data as $key => $value) {
+			if(is_null($value)) continue;
 			$data[$key] = str_replace(["\r", "\n", "\t"], ' ', $value);
 		}
 		$text = implode("\t", $data);
