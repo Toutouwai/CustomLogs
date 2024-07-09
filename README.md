@@ -18,11 +18,6 @@ If you prefix a URL column label with `{url}` then the value in the column will 
 
 The date/time will automatically be added as the first column so you do not need to specify it here.
 
-Example of a configuration line:
-```
-my-log: {url}URL, IP Address, User Agent, Details
-```
-
 ## Writing to a custom log
 
 Use the `CustomLogs::save($name, $data, $options)` method to save data to a custom log file.
