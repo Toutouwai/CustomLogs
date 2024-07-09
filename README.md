@@ -8,9 +8,11 @@ The Custom Logs module is different in that it that lets you write and view log 
 
 In the "Custom logs" textarea field, enter custom logs, one per line, in the format...
 ```
-filename (excluding extension): column label, column label, column label
+name: column label, column label, column label
 ```
-...with as many comma-separated column labels as needed. 
+...with as many comma-separated column labels as needed.
+
+The log name must be a word consisting of only `[-._a-z0-9]` and no extension.
 
 If you prefix a URL column label with `{url}` then the value in the column will be rendered as a link in the log viewer.
 
