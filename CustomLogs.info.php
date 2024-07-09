@@ -2,7 +2,7 @@
 
 $info = array(
 	'title' => 'Custom Logs',
-	'summary' => 'View and write to log files that have custom column labels and column count.',
+	'summary' => 'Write to and view log files that have custom column labels and column count.',
 	'version' => '0.1.0',
 	'author' => 'Robin Sallis',
 	'href' => 'https://github.com/Toutouwai/CustomLogs',
