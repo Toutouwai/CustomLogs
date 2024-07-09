@@ -8,5 +8,6 @@ $info = array(
 	'href' => 'https://github.com/Toutouwai/CustomLogs',
 	'icon' => 'file-text-o',
 	'autoload' => 'template=admin',
+	'singular' => true,
 	'requires' => 'ProcessWire>=3.0.0, PHP>=5.4.0',
 );

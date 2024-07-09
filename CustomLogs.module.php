@@ -51,7 +51,7 @@ class CustomLogs extends WireData implements Module, ConfigurableModule {
 		}
 		$action = $input->post('action');
 		if($action) $pl->processAction($action, $name); // CustomLogs mod
-		$limit = 10;
+		$limit = 100;
 		$options = array('limit' => $limit);
 
 		$q = $input->get('q');
@@ -411,7 +411,7 @@ class CustomLogs extends WireData implements Module, ConfigurableModule {
 		$log = $this->wire()->log;
 		$filelog = $log->getFileLog($name);
 		foreach($data as $key => $value) {
-			$data[$key] = str_replace(array("\r", "\n", "\t"), ' ', $value);
+			$data[$key] = str_replace(["\r", "\n", "\t"], ' ', $value);
 		}
 		$text = implode("\t", $data);
 		return $filelog->save($text, $options);
@@ -455,11 +455,12 @@ class CustomLogs extends WireData implements Module, ConfigurableModule {
 		$f_name = 'customLogs';
 		$f->name = $f_name;
 		$f->label = $this->_('Custom logs');
-		$f->description = $this->_('Enter custom logs, one per line, in the format "filename: column label, column label, column label", with as many comma-separated column labels as needed. If you prefix a URL column label with {url} then the values in the column will be rendered as links in the log viewer.');
+		$f->description = $this->_('Enter custom logs, one per line, in the format "name: column label, column label, column label", with as many comma-separated column labels as needed. If you prefix a URL column label with {url} then the value in the column will be rendered as a link in the log viewer.');
 		$f->description .= "\n" . $this->_('The date/time will automatically be added as the first column so you do not need to specify it here.');
-		$f->description .= "\n" . $this->_('Log files should have the ".txt" file extension, but do not include this in the filename here.');
 		$f->description .= "\n" . $this->_('Example:');
 		$f->description .= "\n" . $this->_('my-log: {url}URL, IP Address, User Agent, Details');
+		$f->notes .= $this->_('Each log name must be a word consisting of only `[-._a-z0-9]` and no extension.');
+		$f->rows = 3;
 		$f->value = $this->$f_name;
 		$inputfields->add($f);
 	}
