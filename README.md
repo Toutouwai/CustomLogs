@@ -2,7 +2,7 @@
 
 When you use the core `$log->save()` method you can only save a single string of text. When you view the log in the core ProcessLogger the columns and their header labels are predetermined.
 
-The Custom Logs module is different in that it that lets you write and view log files with the number of columns and the column header labels you specify in the module configuration.
+The Custom Logs module is different in that it lets you write and view log files with the number of columns and the column header labels you specify in the module configuration.
 
 ## Configuration
 
